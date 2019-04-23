@@ -1,0 +1,20 @@
+const span = document.getElementById('newInputFile');
+function addFile(){
+        var arrayUpload = document.getElementsByClassName('upload') ;
+        var oldfile = arrayUpload[arrayUpload.length-1];
+        var newfile = oldfile.cloneNode();
+        newfile.value='';
+        newfile.name='upload'+arrayUpload.length;
+        if(arrayUpload.length<2){
+            span.classList.add('hidden');
+            oldfile.insertAdjacentElement('afterend', newfile);
+        } else {
+            oldfile.insertAdjacentElement('afterend', newfile);
+            span.innerHTML='<p>Vous ne pouvez plus ajouter de fichier</p>';
+        }
+        
+        
+    }
+    function addButton(){
+        span.classList.remove('hidden');
+    }
